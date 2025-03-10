@@ -31,10 +31,8 @@ document.getElementById("search-btn").addEventListener("click", async () => {
         const borderData = await borderResponse.json();
 
         const borderHTML = borderData.map(borderCountry => `
-            <div>
-                <p><strong>${borderCountry.name.common}</strong></p>
-                <img src="${borderCountry.flags.svg}" alt="Flag of ${borderCountry.name.common}" class="border-flag">
-            </div>
+            <p><strong>${borderCountry.name.common}</strong></p>
+            <img src="${borderCountry.flags.svg}" alt="Flag of ${borderCountry.name.common}" class="border-flag">
         `).join("");
 
         document.getElementById("bordering-countries").innerHTML = `<h3>Bordering Countries:</h3>${borderHTML}`;
